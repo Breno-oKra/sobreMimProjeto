@@ -6,7 +6,7 @@
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
-  --bg-url-desktop: url(./assets/bg-desktop.jpg);
+
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.5);
@@ -16,7 +16,6 @@
 .light {
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
-  --bg-url-desktop: url(./assets/bg-desktop-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -31,10 +30,7 @@ body {
   /* agrupando tudo em background
    background: url(./assets//bg-mobile.jpg) no-repeat top center cover;
    */
-  @media (min-width:800px) {
-    background: var(--bg-url-desktop) no-repeat;
-    background-size: cover;
-  }
+  height: 100vh;
 }
 body * {
   font-family: "Inter", sans-serif;
@@ -63,7 +59,7 @@ body * {
   line-height: 24px; /* 150% */
   margin-top: 8px;
 }
-#switch{
+#switch {
   width: 64px;
   position: relative;
   margin: 4px auto;
@@ -78,15 +74,13 @@ body * {
   top: 50%;
   left: 0;
   z-index: 1;
-  transform:translateY(-50%);
-  
-
+  transform: translateY(-50%);
 }
-.light #switch button{
+.light #switch button {
   right: 0;
   /* volta para posição inicial */
   left: initial;
-  transition:  0.3s;
+  transition: 0.3s;
 }
 #switch span {
   display: block;
@@ -95,7 +89,7 @@ body * {
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
 ul {
@@ -148,4 +142,12 @@ ul li a:hover {
 footer {
   padding: 24px 0;
   text-align: center;
+}
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
